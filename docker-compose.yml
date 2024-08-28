@@ -14,12 +14,6 @@ services:
       DB_USER: root
       DB_PREFIX: ps_
       DB_PASSWD: $DATABASE_PASSWORD
-      # PS_LANGUAGE: en
-      # PS_COUNTRY: GB
-      # PS_DEV_MODE: ${PS_DEV_MODE:-1}
-      # PS_ALL_LANGUAGES: 1
-      # PS_ERASE_DB: 1
-      # PS_INSTALL_DB: 1
       PS_INSTALL_AUTO: 1
       PS_MAIL_SERVER: $PS_MAIL_SERVER
       PS_MAIL_USER: $PS_MAIL_USER
