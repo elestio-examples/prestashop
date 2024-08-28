@@ -6,10 +6,7 @@ ports:
     targetIP: "172.17.0.1"
     public: true
     path: "/"
-    isAuth: true
-    login: root
-    loginTitle: "Temporal UI"
-    password: "random_password"
+    isAuth: false
   - protocol: "HTTPS"
     targetProtocol: "HTTP"
     listeningPort: "7988"
