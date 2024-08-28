@@ -3,7 +3,7 @@ set -o allexport; source .env; set +o allexport;
 
 #wait until the server is ready
 echo "Waiting for software to be ready ..."
-sleep 90s;
+sleep 100s;
 
 docker compose exec -it prestashop bin/console prestashop:config set PS_MAIL_TYPE --value 2
 docker compose exec -it prestashop bin/console prestashop:config set PS_MAIL_SERVER --value "$PS_MAIL_SERVER"
