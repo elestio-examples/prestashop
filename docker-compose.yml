@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  prestashop:
+    image: prestashop/prestashop:$SOFTWARE_VERSION_TAG
+    restart: unless-stopped
+    ports:
+      - 172.17.0.1:35637:80
+    environment:
+      PS_HOST_MODE: 1
+      PS_DOMAIN: $PS_DOMAIN
+      DB_SERVER: db
+      DB_NAME: prestashop
+      DB_USER: root
+      DB_PREFIX: ps_
+      DB_PASSWD: $DATABASE_PASSWORD
+      PS_FOLDER_ADMIN: admin
+      PS_FOLDER_INSTALL: install
+      ADMIN_MAIL: $ADMIN_EMAIL
+      ADMIN_PASSWD: $ADMIN_PASSWORD
+    volumes:
+      - ./prestashop_data/psdata:/var/www/html:delegated
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: elestio/mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: prestashop
+    ports:
+      - "172.17.0.1:3306:3306"
+    volumes:
+      - ./prestashop_data/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "172.17.0.1", "-u", "root", "-p${DATABASE_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pma:
+    image: elestio/phpmyadmin:latest
+    restart: always
+    ports:
+      - "172.17.0.1:32544:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: prestashop
+      PMA_PASSWORD: $DATABASE_PASSWORD
+      UPLOAD_LIMIT: 500M
+    depends_on:
+      - db
+
