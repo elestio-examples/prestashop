@@ -18,13 +18,20 @@ You can open Prestashop here:
 You need to do go through the installation process.
 
 - Under installation process make sure SSL/TLS is checked.
+
+<img src="prestashop-enable-ssl.png" style='width: 100%;'/>
+
 - In the database configuration step, update the host configuration from
     from `127.0.0.1` -> `172.17.0.1`
 - And database Password as `[ADMIN_PASSWORD]` 
+
+<img src="prestashop-db-config.png" style='width: 100%;'/>
 
 Once the installation is complete, you can access your PrestaShop Admin dashboard at:
 
     URL: https://[CI_CD_DOMAIN]/admin
 
 
-Before opening the admin page, go to Tools > Open VS Code in your code editor and execute the following script to configure the email settings and remove the installation directory.
+Before opening the admin page, go to `Tools` > Open `VS Code` in your code editor and execute the following script to configure the email settings and remove the `install` directory.
+
+    ./script/postConfigUpdate.sh

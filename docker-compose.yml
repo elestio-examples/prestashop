@@ -48,7 +48,7 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      PMA_USER: prestashop
+      PMA_USER: root
       PMA_PASSWORD: $DATABASE_PASSWORD
       UPLOAD_LIMIT: 500M
     depends_on:
