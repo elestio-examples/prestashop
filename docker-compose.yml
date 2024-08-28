@@ -14,10 +14,27 @@ services:
       DB_USER: root
       DB_PREFIX: ps_
       DB_PASSWD: $DATABASE_PASSWORD
+      # PS_LANGUAGE: en
+      # PS_COUNTRY: GB
+      # PS_DEV_MODE: ${PS_DEV_MODE:-1}
+      # PS_ALL_LANGUAGES: 1
+      # PS_ERASE_DB: 1
+      # PS_INSTALL_DB: 1
+      PS_INSTALL_AUTO: 1
+      PS_MAIL_SERVER: $PS_MAIL_SERVER
+      PS_MAIL_USER: $PS_MAIL_USER
+      PS_MAIL_PASSWD: $PS_MAIL_PASSWD
+      PS_SHOP_NAME: PrestoShop
+      PS_MAIL_SMTP_ENCRYPTION: TLS
+      PS_MAIL_SMTP_PORT: 25
+      PS_ENABLE_SSL: 1
+      PS_DEFAULT_THEME_NAME: classic
+      PS_THEME_NAME: classic
       PS_FOLDER_ADMIN: admin
       PS_FOLDER_INSTALL: install
       ADMIN_MAIL: $ADMIN_EMAIL
       ADMIN_PASSWD: $ADMIN_PASSWORD
+      _PS_THEME_NAME_: classic
     volumes:
       - ./prestashop_data/psdata:/var/www/html:delegated
     depends_on:
