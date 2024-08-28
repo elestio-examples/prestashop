@@ -34,4 +34,4 @@ Once the installation is complete, you can access your PrestaShop Admin dashboar
 
 Before opening the admin page, go to `Tools` > Open `VS Code` in your code editor and execute the following script to configure the email settings and remove the `install` directory.
 
-    ./script/postConfigUpdate.sh
+    ./scripts/postConfigUpdate.sh
