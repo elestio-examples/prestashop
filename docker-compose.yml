@@ -25,8 +25,8 @@ services:
       PS_ENABLE_SSL: 1
       PS_DEFAULT_THEME_NAME: classic
       PS_THEME_NAME: classic
-      PS_FOLDER_ADMIN: admin_ps
-      PS_FOLDER_INSTALL: install_ps
+      PS_FOLDER_ADMIN: administration
+      PS_FOLDER_INSTALL: installation
       ADMIN_MAIL: $ADMIN_EMAIL
       ADMIN_PASSWD: $ADMIN_PASSWORD
       _PS_THEME_NAME_: classic

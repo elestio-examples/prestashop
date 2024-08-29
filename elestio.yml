@@ -48,7 +48,7 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "Prestashop UI"
-  - url: "https://[CI_CD_DOMAIN]/admin_ps"
+  - url: "https://[CI_CD_DOMAIN]/administration"
     label: "Prestashop Admin UI"
     login: "[ADMIN_EMAIL]"
     password: "[ADMIN_PASSWORD]"
