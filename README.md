@@ -21,7 +21,7 @@ Once the installation is complete, you can access your PrestaShop Admin dashboar
 
 ## Configure Email configuration for Prestashop
 
-Open the terminal or Head towards Tools VS Code to open in editor, and run the following commands
+Open the terminal or go to Tools in VS Code to launch the editor, then run the following commands.
 
     set -o allexport; source .env; set +o allexport;
 
